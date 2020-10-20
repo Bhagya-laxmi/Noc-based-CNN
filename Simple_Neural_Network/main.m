@@ -231,13 +231,13 @@ pred = predict(Theta1, Theta2, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
-##csvwrite('Layer1.txt',Theta1);
-##csvwrite('Layer2.txt',Theta2);
-##
-##csvwrite('Weight.txt',Theta1);
-##dlmwrite('Weight.txt',Theta2,'-append');
-
-dlmwrite('weight_wo.txt',Theta1,'delimiter',' ');
-dlmwrite('weight_wo.txt',' ');
-dlmwrite('weight_wo.txt',Theta2,'delimiter',' ','-append');
+% csvwrite('Layer1.txt',Theta1);
+% csvwrite('Layer2.txt',Theta2);
+% 
+% csvwrite('Weight.txt',Theta1);
+% dlmwrite('Weight.txt',Theta2,'-append');
+% 
+% dlmwrite('weight_wo.txt',Theta1,'delimiter',' ');
+% dlmwrite('weight_wo.txt',' ');
+% dlmwrite('weight_wo.txt',Theta2,'delimiter',' ','-append');
 

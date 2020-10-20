@@ -74,7 +74,8 @@ size(a3);
 Y_modified = zeros(m, num_labels);%5000*10
 for i=1: m
   Y_modified(i,y(i)) = 1;
-endfor
+end
+ 
 J_wo = (1/m)* (sum(sum(-Y_modified .* log(a3) -(1 -Y_modified).*log(1- a3))));
 
 regTheta1 =  Theta1(:,2:end);
@@ -115,24 +116,24 @@ for i= 1:m %1 to 5000
   
   Theta2_grad = Theta2_grad + delta_3'*(a_2);
   
-##  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-##  del1 = zeros(size(Theta1));
-##  del2 = zeros(size(Theta2));
-##  
-##  a1t = a1(i,:);
-##	a2t = a2(i,:);
-##	a3t = a3(i,:);
-##  
-##	yt = k(i,:);
-##	d3 = a3t - yt;
-##  check = sigmoidGradient([1;Theta1 * a1t']);
-##	d2 = Theta2'*d3' .* sigmoidGradient([1;Theta1 * a1t']);
-##	del1 = del1 + d2(2:end)*a1t;
-##	del2 = del2 + d3' * a2t;
-##  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% del1 = zeros(size(Theta1));
+% del2 = zeros(size(Theta2));
+%   
+% a1t = a1(i,:);
+% a2t = a2(i,:);
+% a3t = a3(i,:);
+%   
+% yt = k(i,:);
+% d3 = a3t - yt;
+% check = sigmoidGradient([1;Theta1 * a1t']);
+% d2 = Theta2'*d3' .* sigmoidGradient([1;Theta1 * a1t']);
+% del1 = del1 + d2(2:end)*a1t;
+% del2 = del2 + d3' * a2t;
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%
   
 
-endfor
+end
 
 % Step 5
 Theta2_grad = (1/m) * Theta2_grad; % (10*26)
